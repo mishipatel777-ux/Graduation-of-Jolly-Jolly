@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background: linear-gradient(135deg, #ffeef5 0%, #fff4e6 25%, #e8f4f8 50%, #f0e6ff 75%, #ffe6f0 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
@@ -25,12 +27,44 @@ body {
     padding: 20px;
 }
 
-/* Header */
-.header {
+/* ===== LANDING PAGE ===== */
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.landing-header {
     text-align: center;
-    padding: 40px 20px;
     margin-bottom: 40px;
     animation: slideInDown 0.8s ease-out;
+}
+
+.landing-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.5em;
+    background: linear-gradient(135deg, #ff69b4, #ffa6d6, #87ceeb, #dda0dd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    font-weight: 700;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.landing-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2em;
+    color: #ff69b4;
+    font-weight: 600;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes slideInDown {
@@ -44,6 +78,137 @@ body {
     }
 }
 
+/* Group Photo Section */
+.group-photo-section {
+    margin-bottom: 60px;
+    animation: scaleIn 0.8s ease-out;
+}
+
+.group-photo-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 20px 60px rgba(200, 150, 200, 0.3);
+    transition: all 0.3s ease;
+}
+
+.group-photo-container:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 30px 80px rgba(200, 150, 200, 0.4);
+}
+
+.group-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.group-photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 182, 193, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.group-photo-container:hover .group-photo-overlay {
+    opacity: 1;
+}
+
+.group-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3em;
+    color: white;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    animation: popIn 0.3s ease-out;
+}
+
+.click-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.3em;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.landing-footer {
+    text-align: center;
+    animation: slideInUp 0.8s ease-out;
+}
+
+.footer-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.4em;
+    color: #ff69b4;
+    font-weight: 600;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== PROFILES PAGE ===== */
+.profiles-page {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    animation: slideInDown 0.8s ease-out;
+}
+
 .header-content {
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
@@ -53,35 +218,47 @@ body {
 }
 
 .main-title {
+    font-family: 'Fredoka', sans-serif;
     font-size: 3.5em;
     background: linear-gradient(135deg, #ff69b4, #ffa6d6, #87ceeb, #dda0dd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: 700;
     animation: bounce 2s ease-in-out infinite;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
 .subtitle {
+    font-family: 'Fredoka', sans-serif;
     font-size: 1.5em;
     color: #ff69b4;
     font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #ff69b4, #ffa6d6);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
 }
 
 /* Main Content */
 .main-content {
     animation: fadeIn 0.8s ease-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .intro-section {
@@ -91,12 +268,15 @@ body {
 }
 
 .intro-section h2 {
+    font-family: 'Fredoka', sans-serif;
     font-size: 2.5em;
     color: #ff69b4;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .intro-section p {
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.2em;
     color: #7a7a7a;
     font-style: italic;
@@ -119,17 +299,6 @@ body {
     cursor: pointer;
     animation: scaleIn 0.6s ease-out forwards;
     opacity: 0;
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .profile-card:nth-child(1) { animation-delay: 0.1s; }
@@ -159,13 +328,15 @@ body {
 }
 
 .profile-name {
+    font-family: 'Fredoka', sans-serif;
     font-size: 1.8em;
     color: #ff69b4;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 5px;
 }
 
 .profile-superlative {
+    font-family: 'Quicksand', sans-serif;
     font-size: 0.95em;
     color: #b19cd9;
     font-style: italic;
@@ -173,6 +344,7 @@ body {
 }
 
 .profile-quote {
+    font-family: 'Quicksand', sans-serif;
     font-size: 0.9em;
     color: #7a7a7a;
     font-style: italic;
@@ -320,12 +492,15 @@ body {
 }
 
 #modalName {
+    font-family: 'Fredoka', sans-serif;
     font-size: 2.2em;
     color: #ff69b4;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .superlative {
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.1em;
     color: #b19cd9;
     font-style: italic;
@@ -333,6 +508,7 @@ body {
 }
 
 #modalBio {
+    font-family: 'Quicksand', sans-serif;
     font-size: 1em;
     color: #7a7a7a;
     line-height: 1.6;
@@ -346,12 +522,14 @@ body {
 }
 
 .quote-label {
+    font-family: 'Fredoka', sans-serif;
     color: #ff69b4;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .quote {
+    font-family: 'Quicksand', sans-serif;
     color: #7a7a7a;
     font-size: 1.05em;
     font-style: italic;
@@ -390,6 +568,10 @@ body {
         font-size: 2.5em;
     }
 
+    .landing-title {
+        font-size: 2.5em;
+    }
+
     .profiles-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
@@ -414,8 +596,16 @@ body {
         font-size: 2em;
     }
 
+    .landing-title {
+        font-size: 2em;
+    }
+
     .subtitle {
         font-size: 1.2em;
+    }
+
+    .landing-subtitle {
+        font-size: 1.4em;
     }
 
     .profiles-grid {
@@ -428,5 +618,13 @@ body {
 
     .modal-content {
         padding: 20px;
+    }
+
+    .group-text {
+        font-size: 2em;
+    }
+
+    .click-text {
+        font-size: 1em;
     }
 }

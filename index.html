@@ -8,27 +8,53 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="main-title">✨ Graduation of Jolly Jolly ✨</h1>
-                <p class="subtitle">We did it! 🎉 Class of 2026</p>
+        <!-- Landing Page with Group Photo -->
+        <div class="landing-page" id="landingPage">
+            <header class="landing-header">
+                <h1 class="landing-title">✨ Graduation of Jolly Jolly ✨</h1>
+                <p class="landing-subtitle">Class of 2026</p>
+            </header>
+
+            <div class="group-photo-section">
+                <div class="group-photo-container" onclick="goToProfiles()">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=600&fit=crop" alt="Our Gang!" class="group-photo">
+                    <div class="group-photo-overlay">
+                        <h2 class="group-text">Our Gang! 🎪</h2>
+                        <p class="click-text">Click to meet everyone</p>
+                    </div>
+                </div>
             </div>
-        </header>
 
-        <!-- Confetti Animation -->
-        <div class="confetti-container" id="confetti"></div>
+            <div class="landing-footer">
+                <p class="footer-text">We did it! Here's to unforgettable memories and forever friendships 💖</p>
+            </div>
+        </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <section class="intro-section">
-                <h2>Meet Our Jolly Squad! 💖</h2>
-                <p>Click on any profile to see more photos and learn about your favorites!</p>
-            </section>
+        <!-- Profiles Page -->
+        <div class="profiles-page" id="profilesPage" style="display: none;">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="main-title">✨ Graduation of Jolly Jolly ✨</h1>
+                    <p class="subtitle">We did it! 🎉 Class of 2026</p>
+                    <button class="back-btn" onclick="backToLanding()">← Back to Group</button>
+                </div>
+            </header>
 
-            <!-- Profile Grid -->
-            <div class="profiles-grid" id="profilesGrid"></div>
-        </main>
+            <!-- Confetti Animation -->
+            <div class="confetti-container" id="confetti"></div>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <section class="intro-section">
+                    <h2>Meet Our Jolly Squad! 💖</h2>
+                    <p>Click on any profile to see more photos and learn about your favorites!</p>
+                </section>
+
+                <!-- Profile Grid -->
+                <div class="profiles-grid" id="profilesGrid"></div>
+            </main>
+        </div>
 
         <!-- Modal for Profile Details -->
         <div class="modal" id="profileModal">

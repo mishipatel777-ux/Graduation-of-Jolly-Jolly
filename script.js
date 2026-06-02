@@ -2,10 +2,10 @@
 const profiles = [
     {
         id: 1,
-        name: "Mishi",
-        superlative: "Most Likely to Make Everyone Laugh",
-        bio: "The creative genius behind this whole site! Always coming up with fun ideas and bringing the vibe.",
-        quote: "Life is short, make it sweet!",
+        name: "Serina",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
@@ -14,10 +14,10 @@ const profiles = [
     },
     {
         id: 2,
-        name: "Alex",
-        superlative: "Best Smile",
-        bio: "The sunshine of our group! Always positive and ready for an adventure.",
-        quote: "Be yourself, everyone else is already taken.",
+        name: "Nitya",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop",
@@ -26,10 +26,10 @@ const profiles = [
     },
     {
         id: 3,
-        name: "Jordan",
-        superlative: "Most Likely to Start a Trend",
-        bio: "Fashion forward and always on point. The trendsetter of our crew!",
-        quote: "Do what makes you happy and the rest will follow.",
+        name: "Abigail",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
@@ -38,10 +38,10 @@ const profiles = [
     },
     {
         id: 4,
-        name: "Casey",
-        superlative: "Best Friend Vibes",
-        bio: "The loyal friend who's always got your back. A true ride or die!",
-        quote: "Friends who laugh together, stay together.",
+        name: "Sydney",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop",
@@ -50,10 +50,10 @@ const profiles = [
     },
     {
         id: 5,
-        name: "Taylor",
-        superlative: "Most Likely to Brighten Your Day",
-        bio: "The optimist of the group! Always seeing the bright side of everything.",
-        quote: "Every day is a new beginning.",
+        name: "Mishwa",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
@@ -62,10 +62,10 @@ const profiles = [
     },
     {
         id: 6,
-        name: "Morgan",
-        superlative: "Most Likely to be Famous",
-        bio: "Talented in everything they do. Watch out world, Morgan's coming!",
-        quote: "Chase your dreams fearlessly.",
+        name: "Amanya",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
@@ -74,10 +74,10 @@ const profiles = [
     },
     {
         id: 7,
-        name: "Riley",
-        superlative: "Best Sense of Humor",
-        bio: "The comedian of our friend group. Always keeping us entertained!",
-        quote: "Laughter is the best medicine.",
+        name: "Grace",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop",
@@ -86,10 +86,10 @@ const profiles = [
     },
     {
         id: 8,
-        name: "Cameron",
-        superlative: "Most Likely to Stay in Touch",
-        bio: "The glue that holds our group together. A forever friend!",
-        quote: "Good friends never leave each other.",
+        name: "Tiffany",
+        superlative: "Coming soon!",
+        bio: "Edit this with your own info!",
+        quote: "Your favorite quote here",
         photos: [
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop",
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
@@ -101,10 +101,20 @@ const profiles = [
 let currentProfileIndex = 0;
 let currentPhotoIndex = 0;
 
-// Initialize the page
-function init() {
+// Navigate to profiles page
+function goToProfiles() {
+    document.getElementById('landingPage').style.display = 'none';
+    document.getElementById('profilesPage').style.display = 'block';
     renderProfiles();
     createConfetti();
+}
+
+// Go back to landing page
+function backToLanding() {
+    document.getElementById('profilesPage').style.display = 'none';
+    document.getElementById('landingPage').style.display = 'flex';
+    const confettiContainer = document.getElementById('confetti');
+    confettiContainer.innerHTML = '';
 }
 
 // Render profile cards
@@ -208,11 +218,4 @@ function createConfetti() {
         confetti.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
         container.appendChild(confetti);
     }
-}
-
-// Initialize on page load
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-} else {
-    init();
 }
