@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation of Jolly Jolly 🎓</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="main-title">✨ Graduation of Jolly Jolly ✨</h1>
+                <p class="subtitle">We did it! 🎉 Class of 2026</p>
+            </div>
+        </header>
+
+        <!-- Confetti Animation -->
+        <div class="confetti-container" id="confetti"></div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="intro-section">
+                <h2>Meet Our Jolly Squad! 💖</h2>
+                <p>Click on any profile to see more photos and learn about your favorites!</p>
+            </section>
+
+            <!-- Profile Grid -->
+            <div class="profiles-grid" id="profilesGrid"></div>
+        </main>
+
+        <!-- Modal for Profile Details -->
+        <div class="modal" id="profileModal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <div class="modal-body">
+                    <div class="photo-gallery">
+                        <div class="gallery-container">
+                            <img id="modalPhoto" src="" alt="Profile photo" class="modal-photo">
+                            <button class="gallery-btn prev-btn" onclick="previousPhoto()">❮</button>
+                            <button class="gallery-btn next-btn" onclick="nextPhoto()">❯</button>
+                        </div>
+                        <div class="photo-counter">
+                            <span id="photoCounter">1</span> / <span id="photoTotal">3</span>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h2 id="modalName">Name</h2>
+                        <p class="superlative" id="modalSuperlative">Superlative</p>
+                        <p id="modalBio">Bio goes here</p>
+                        <div class="quote-section">
+                            <p class="quote-label">✨ Favorite Quote:</p>
+                            <p id="modalQuote" class="quote">"Quote here"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
